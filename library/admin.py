@@ -4,8 +4,6 @@ from library.models import Author
 
 
 # Register your models here.
-
-
 @admin.register(Author)
 class AuthorModelAdmin(admin.ModelAdmin):
     list_display = [
