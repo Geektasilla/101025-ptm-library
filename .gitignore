@@ -266,3 +266,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+pw_5_tasks/

@@ -29,3 +29,10 @@ class Author(models.Model):
             MaxValueValidator(10)
         ],
     )
+
+
+    def __str__(self):
+        return f'{self.name} {self.surname}'
+
+
+

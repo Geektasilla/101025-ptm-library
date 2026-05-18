@@ -79,3 +79,10 @@ class Membership(models.Model):
     joined_at = models.DateField(
         default=timezone.now
     )
+
+
+    def __str__(self):
+        return f'{self.member.username} {self.library.name}'
+
+
+

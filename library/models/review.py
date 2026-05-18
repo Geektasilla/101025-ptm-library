@@ -1,3 +1,5 @@
+from operator import ifloordiv
+
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
@@ -22,3 +24,10 @@ class Review(models.Model):
         null=True,
         blank=True
     )
+
+
+    def __str__(self):
+        rating =  self.rating if self.rating else 'N/A'
+        return f'{self.book.name} - {self.reviewer.username} - {rating}'
+
+
