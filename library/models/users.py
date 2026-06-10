@@ -64,6 +64,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = ["email", "role", "gender"]
 
+    def __str__(self):
+        return self.username
+
+    class Meta:
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
+
 
 class Membership(models.Model):
     member = models.ForeignKey(

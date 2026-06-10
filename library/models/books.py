@@ -58,3 +58,10 @@ class Book(models.Model):
         related_name='books',
     )
     published_date = models.DateField(default=timezone.now)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Book'
+        verbose_name_plural = 'Books'

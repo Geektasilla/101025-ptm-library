@@ -29,3 +29,10 @@ class Author(models.Model):
             MaxValueValidator(10)
         ],
     )
+
+    def __str__(self):
+        return f"{self.name[0]}. {self.surname}"
+
+    class Meta:
+        verbose_name = 'Author'
+        verbose_name_plural = 'Authors'

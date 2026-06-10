@@ -22,3 +22,10 @@ class Review(models.Model):
         null=True,
         blank=True
     )
+
+    def __str__(self):
+        return f"{self.reviewer.username}. {self.rating}"
+
+    class Meta:
+        verbose_name = 'Review'
+        verbose_name_plural = 'Reviews'

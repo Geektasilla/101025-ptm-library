@@ -41,3 +41,10 @@ class Borrow(models.Model):
         if self.is_returned and self.return_actual_date < datetime.now():
             return False
         return True
+
+    def __str__(self):
+        return f"{self.member.username}. {self.book.name} ({self.library.name})"
+
+    class Meta:
+        verbose_name = 'Library'
+        verbose_name_plural = 'Libraries'

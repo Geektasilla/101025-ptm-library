@@ -16,6 +16,14 @@ class Event(models.Model):
         related_name='events'
     )
 
+    def __str__(self):
+        return f"{self.title}. {self.library.name} ({self.date})"
+
+    class Meta:
+        verbose_name = 'Event'
+        verbose_name_plural = 'Events'
+
+
 
 class EventParticipant(models.Model):
     event = models.ForeignKey(
@@ -28,3 +36,6 @@ class EventParticipant(models.Model):
         related_name='events'
     )
     registration_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"{self.event.title} ({self.registration_date})"
